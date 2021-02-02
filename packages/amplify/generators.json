@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "amplify",
+  "version": "0.0.1",
+  "generators": {
+    "amplify": {
+      "factory": "./src/generators/amplify/generator",
+      "schema": "./src/generators/amplify/schema.json",
+      "description": "amplify generator"
+    },
+    "function": {
+      "factory": "./src/generators/function/generator",
+      "schema": "./src/generators/function/schema.json",
+      "description": "function generator"
+    }
+  }
+}

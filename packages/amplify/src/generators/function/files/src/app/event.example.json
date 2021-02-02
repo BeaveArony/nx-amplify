@@ -1,0 +1,44 @@
+{
+  "request": {
+    "headers": {
+      "docs": "See the following for documentation about testing and debugging AppSync resolvers:",
+      "origin": "https://docs.aws.amazon.com/appsync/latest/devguide/test-debug-resolvers.html",
+      "instructions": "Rename this file to 'event.json' and add or change your mock data. Pass it to the index.handler function or as event to amplify mock."
+    }
+  },
+  "typeName": "Mutation",
+  "fieldName": "addDog",
+  "arguments": {
+    "input": { "firstname": "Shaggy", "age": 4 }
+  },
+  "source": {},
+  "result": {
+    "breed": "Miniature Schnauzer",
+    "color": "black_grey"
+  },
+  "identity": {
+    "sub": "uuid",
+    "issuer": "https://cognito-idp.region.amazonaws.com/userPoolId",
+    "username": "Nadia",
+    "claims": {
+      "sub": "uuid",
+      "aud": "1ob2ona740i5e6n4i7l3duupbn",
+      "email_verified": true,
+      "event_id": "869bbade-1cc6-4050-86ed-eaf4015c51cc",
+      "token_use": "id",
+      "auth_time": 1603306709,
+      "iss": "https://cognito-idp.us-east-1.amazonaws.com/userPoolId",
+      "cognito:username": "uuid",
+      "cognito:groups": ["Admin"],
+      "exp": 1603310309,
+      "iat": 1603306709,
+      "email": "firstname.lastname+sample@email.com"
+    },
+    "groups": ["Admin"],
+    "sourceIP": "x.x.x.x",
+    "defaultAuthStrategy": "ALLOW"
+  },
+  "prev": {
+    "result": {}
+  }
+}

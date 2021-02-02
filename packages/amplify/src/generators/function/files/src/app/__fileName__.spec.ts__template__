@@ -1,0 +1,8 @@
+import { Context } from './aws-lambda-handler';
+import { handler } from './<%= fileName %>';
+
+describe('<%= propertyName %>', () => {
+    it('handler should return result', async () => {
+        expect(handler({}, {} as Context)).resolves.toEqual('<%= name %>');
+    })
+})

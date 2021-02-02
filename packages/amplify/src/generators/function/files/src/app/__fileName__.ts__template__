@@ -1,0 +1,5 @@
+import { AsyncHandler, Handler } from './aws-lambda-handler';
+
+export const handler: AsyncHandler<Handler<unknown, string>> = async () => {
+    return '<%= name %>';
+}

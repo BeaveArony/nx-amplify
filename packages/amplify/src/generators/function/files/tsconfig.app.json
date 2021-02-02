@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": ["es2020"],
+    "target": "es2019",
+    "importHelpers": false,
+    "outDir": "<%= offsetFromRoot %>dist/out-tsc",
+    "declaration": false,
+    "types": ["node"]
+  },
+  "exclude": ["**/*.spec.ts"],
+  "include": ["**/*.ts"]
+}

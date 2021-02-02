@@ -1,0 +1,46 @@
+
+export interface AppSyncEvent<T = unknown> {
+  /* Filled dynamically based on @function usage location, ie "Query" */
+  typeName: 'Query' | 'Mutation' | 'Subscription';
+  /* Filled dynamically based on @function usage location, ie "me" */
+  fieldName: string;
+  /* GraphQL field arguments via $ctx.arguments */
+  arguments: T;
+  /* AppSync identity object via $ctx.identity */
+  identity: AppSyncEventIdentity;
+  /* The object returned by the parent resolver. E.G. if resolving field 'Post.comments', the source is the Post object. */
+  source?: Record<string, unknown>;
+  /* AppSync request object. Contains things like headers. */
+  request: {
+    headers: Record<string, string>;
+  };
+  /* If using the built-in pipeline resolver support, this contains the object returned by the previous function. */
+  prev?: {
+    result: Record<string, unknown>;
+  };
+}
+
+export interface AppSyncEventIdentity {
+  claims: AppSyncEventClaims;
+  defaultAuthStrategy: 'ALLOW' | 'DENY';
+  groups: string[] | null;
+  issuer: string;
+  sourceIp: string[];
+  sub: string;
+  username: string;
+}
+
+export interface AppSyncEventClaims {
+  sub: string;
+  aud: string;
+  email_verified: boolean;
+  event_id: string;
+  token_use: string;
+  auth_time: number;
+  iss: string;
+  'cognito:username'?: string;
+  'cognito:groups'?: string[];
+  exp: number;
+  iat: number;
+  email: string;
+}
