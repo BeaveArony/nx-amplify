@@ -1,4 +1,4 @@
-import { Handler } from './app/aws-lambda-handler';
+import { Handler } from './app/types';
 import * as fromApp from './app';
 
 export const handler: Handler<unknown, unknown> = async (

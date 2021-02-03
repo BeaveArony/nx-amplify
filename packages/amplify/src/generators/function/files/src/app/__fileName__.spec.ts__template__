@@ -1,4 +1,4 @@
-import { Context } from './aws-lambda-handler';
+import { Context } from './types';
 import { handler } from './<%= fileName %>';
 
 describe('<%= propertyName %>', () => {

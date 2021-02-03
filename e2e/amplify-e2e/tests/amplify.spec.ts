@@ -8,13 +8,14 @@ import {
   uniq,
   renameFile,
   listFiles,
+  readFile,
 } from '@nrwl/nx-plugin/testing';
 import { copySync } from 'fs-extra';
 import * as path from 'path';
 
 describe('amplify e2e', () => {
   it('should create amplify nodejs typescript function', async (done) => {
-    const plugin = uniq('amplify');
+    const plugin = uniq('amplifyFunction');
     const defaultDir = 'functions';
     ensureNxProject('@mgustmann/amplify', 'dist/packages/amplify');
     copyAmplifyDirectory(plugin);
@@ -86,15 +87,21 @@ describe('amplify e2e', () => {
       done();
     });
 
+    it('should add @types packages to root package.json', async (done) => {
+      const packageJson = readJson(`package.json`);
+      const deps = Object.keys(packageJson.devDependencies);
+      expect(deps.includes(`@types/aws-lambda`)).toBeTruthy();
+      expect(deps.includes(`@types/aws-sdk`)).toBeTruthy();
+      done();
+    });
+
     it('should rename .js to .ts', async (done) => {
       expect(() =>
         checkFilesExist(`apps/functions/${name}/src/main.ts`)
       ).not.toThrow();
 
       const files = listFiles(`apps/functions/${name}/src/app`);
-      console.log('Files', files);
       files.forEach((file) => {
-        console.log('File', file);
         expect(file.endsWith('.js')).toBeFalsy();
       });
       done();
@@ -106,6 +113,12 @@ describe('amplify e2e', () => {
       ).not.toThrow();
       const packageJson = readJson(`apps/functions/${name}/src/package.json`);
       expect(packageJson.name).toEqual(`@proj/functions-${name}`);
+      done();
+    });
+
+    it('should add function/src to .gitignore file', async (done) => {
+      const gitIgnoreFile = readFile(`.gitignore`);
+      expect(gitIgnoreFile.includes(`${name}/src/*`)).toBeTruthy();
       done();
     });
   });

@@ -1,11 +1,11 @@
-import { Handler } from './aws-lambda-handler';
+import { Handler } from './types';
 
 export const handler: Handler<unknown, unknown> = async (
   event,
   context,
   callback
 ) => {
-  console.log('main handler called', {
+  console.log('app handler called', {
     event: `${JSON.stringify(event, null, 2)}`,
     context,
   });

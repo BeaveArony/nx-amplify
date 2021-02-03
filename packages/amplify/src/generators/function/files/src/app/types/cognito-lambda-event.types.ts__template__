@@ -40,8 +40,7 @@ export type UserPoolLambdaTriggerSources =
   | UserPoolLambdaMigrateUserTriggerSource
   | UserPoolLambdaCustomMessageTriggerSource
   | UserPoolLambdaPostAuthenticationTriggerSource
-  | CognitoMigrateUserTriggerEvent
-  | 'PostAuthentication_Authentication'
+  | CognitoMigrateUserTriggerEvent;
 
 export interface AuthChallengResult {
   challengeName:
@@ -64,7 +63,7 @@ export interface AuthChallengResult {
  * This event shows the Lambda trigger common parameters:
  */
 export interface CognitoCommonTriggerEvent<
-  TTriggerSource extends UserPoolLambdaTriggerSources
+  TTriggerSource = UserPoolLambdaTriggerSources
 > {
   version: string;
   triggerSource: TTriggerSource;
@@ -322,3 +321,15 @@ export interface CognitoCustomMessageTriggerEvent
     emailSubject: string;
   };
 }
+
+export type CognitoTriggerEvent =
+  | CognitoPreSignupTriggerEvent
+  | CognitoPostConfirmationTriggerEvent
+  | CognitoPreAuthenticationTriggerEvent
+  | CognitoPostAuthenticationTriggerEvent
+  | CognitoDefineAuthChallengeTriggerEvent
+  | CognitoCreateAuthChallengeTriggerEvent
+  | CognitoVerifyAuthChallengeTriggerEvent
+  | CognitoPreTokenGenerationTriggerEvent
+  | CognitoMigrateUserTriggerEvent
+  | CognitoCustomMessageTriggerEvent;
