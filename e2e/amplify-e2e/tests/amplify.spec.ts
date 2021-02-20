@@ -87,9 +87,10 @@ describe('amplify e2e', () => {
       done();
     });
 
-    it('should add @types packages to root package.json', async (done) => {
+    it('should add packages to root package.json', async (done) => {
       const packageJson = readJson(`package.json`);
       const deps = Object.keys(packageJson.devDependencies);
+      expect(deps.includes(`aws-lambda`)).toBeTruthy();
       expect(deps.includes(`@types/aws-lambda`)).toBeTruthy();
       expect(deps.includes(`@types/aws-sdk`)).toBeTruthy();
       done();

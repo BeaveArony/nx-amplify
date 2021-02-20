@@ -16,8 +16,10 @@ export function updatePackageJson(host: Tree, options: NormalizedSchema) {
     host,
     {},
     {
-      '@types/aws-sdk': '^2.7.0',
-      '@types/aws-lambda': '^8.10.63',
+      // Add to devDependencies, since it is provided by Lambda in run-time
+      'aws-lambda': 'latest',
+      '@types/aws-sdk': 'latest',
+      '@types/aws-lambda': 'latest',
     }
   );
 }
