@@ -1,7 +1,7 @@
 import { Handler } from './app/types';
 import * as fromApp from './app';
 
-export const handler: Handler<unknown, unknown> = async (
+export const handler: Handler<unknown, unknown> = (
   event,
   context,
   callback
