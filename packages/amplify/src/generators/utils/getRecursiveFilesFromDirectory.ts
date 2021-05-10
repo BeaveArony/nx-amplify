@@ -7,7 +7,8 @@ export function getRecursiveFilesFromDirectory(dir: string) {
     fs.readdirSync(directory).forEach((file) => {
       const absPath = path.join(directory, file);
       if (fs.statSync(absPath).isDirectory()) {
-        return readDirectory(absPath);
+        // Ignore node_modules directory
+        return absPath.includes('node_modules') ? null : readDirectory(absPath);
       }
       return files.push(absPath);
     });
