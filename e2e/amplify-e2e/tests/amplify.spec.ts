@@ -5,6 +5,7 @@ import {
   readJson,
   runNxCommandAsync,
   tmpProjPath,
+  cleanup,
   uniq,
   renameFile,
   listFiles,
@@ -16,15 +17,10 @@ import * as path from 'path';
 describe('amplify e2e', () => {
   it('should create amplify nodejs typescript function', async (done) => {
     const plugin = uniq('amplifyFunction');
-    const defaultDir = 'functions';
+    cleanup();
     ensureNxProject('@mgustmann/amplify', 'dist/packages/amplify');
     copyAmplifyDirectory(plugin);
     await runNxCommandAsync(`generate @mgustmann/amplify:function ${plugin}`);
-
-    const result = await runNxCommandAsync(
-      `build ${defaultDir}-${names(plugin).fileName}`
-    );
-    expect(result.stdout).toContain('Built at');
 
     done();
   });

@@ -9,16 +9,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "packages/amplify/**/*.ts"
-            ]
+            "lintFilePatterns": ["packages/amplify/**/*.ts"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/packages/amplify"
-          ],
+          "outputs": ["coverage/packages/amplify"],
           "options": {
             "jestConfig": "packages/amplify/jest.config.js",
             "passWithNoTests": true
@@ -26,9 +22,7 @@
         },
         "build": {
           "executor": "@nrwl/node:package",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/amplify",
             "tsConfig": "packages/amplify/tsconfig.lib.json",
