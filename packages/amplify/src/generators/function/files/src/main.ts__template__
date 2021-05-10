@@ -1,4 +1,4 @@
-import { Handler } from './app/types';
+import { Handler } from 'aws-lambda';
 import * as fromApp from './app';
 
 export const handler: Handler<unknown, unknown> = (
@@ -10,5 +10,5 @@ export const handler: Handler<unknown, unknown> = (
     event: `${JSON.stringify(event, null, 2)}`,
     context,
   });
-  fromApp.handler(event, context, callback);
+  return fromApp.handler(event, context, callback);
 };

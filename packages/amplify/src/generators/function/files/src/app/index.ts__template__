@@ -1,4 +1,4 @@
-import { Handler } from './types';
+import { Handler } from 'aws-lambda';
 
 export const handler: Handler<unknown, unknown> = async (
   event,
@@ -9,6 +9,8 @@ export const handler: Handler<unknown, unknown> = async (
     event: `${JSON.stringify(event, null, 2)}`,
     context,
   });
-
+  // Either invoke callback
   callback(null, event);
+  // Or return Promise
+  // return event;
 };
