@@ -1,3 +1,2 @@
 export * from './aws-lambda-handler.types';
 export * from './appsync-event.types';
-export * from './cognito-lambda-event.types';

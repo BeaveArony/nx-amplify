@@ -1,8 +1,10 @@
+import { Linter } from '@nrwl/linter';
+
 export interface FunctionGeneratorSchema {
   name: string;
   tags?: string;
   directory?: string;
-  linter?: 'eslint' | 'tslint';
+  linter?: Linter;
   babelJest?: boolean;
   skipFormat?: boolean;
   unitTestRunner?: 'jest' | 'none';

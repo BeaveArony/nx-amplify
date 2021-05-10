@@ -25,7 +25,7 @@ export function copyAmplifyFunctionFiles(
         /exports\.handler/g,
         `import { Handler } from './types';
 
-        export const handler: Handler<any,unknown>`
+        export const handler: Handler<any, unknown>`
       );
       content = content.replace(
         /(?:const|let|var)\s+([a-zA-Z0-9]*)\s*=\s*(require\(.*\).*)/g,
