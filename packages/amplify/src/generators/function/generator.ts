@@ -8,6 +8,7 @@ import { updateCloudformationJson } from './actions/updateCloudformationJson';
 import { updateGitIgnore } from './actions/updateGitIgnore';
 import { updatePackageJson } from './actions/updatePackageJson';
 import { updateWorkspaceJson } from './actions/updateWorkspaceJson';
+import { updateAmplifyStateJson } from './actions/updateAmplifyStateJson';
 
 export default async function (host: Tree, options: FunctionGeneratorSchema) {
   const normalizedOptions = normalizeOptions(host, options);
@@ -27,9 +28,12 @@ export default async function (host: Tree, options: FunctionGeneratorSchema) {
   addFiles(host, normalizedOptions);
 
   copyAmplifyFunctionFiles(host, normalizedOptions);
+
+  // change various files
   updatePackageJson(host, normalizedOptions);
   updateWorkspaceJson(host, normalizedOptions);
   updateCloudformationJson(host, normalizedOptions);
+  updateAmplifyStateJson(host, normalizedOptions);
   updateGitIgnore(host, normalizedOptions);
 
   await formatFiles(host);
