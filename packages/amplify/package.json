@@ -1,6 +1,6 @@
 {
   "name": "@mgustmann/amplify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "src/index.js",
   "generators": "./generators.json",
   "executors": "./executors.json",
@@ -9,8 +9,8 @@
   },
   "repository": "https://github.com/BeaveArony/nx-amplify.git",
   "dependencies": {
-    "@nrwl/devkit": "^11.2.7",
-    "@nrwl/node": "^11.2.7",
-    "tslib": "^2.1.0"
+    "@nrwl/devkit": "^12.2.0",
+    "@nrwl/node": "^12.2.0",
+    "tslib": "^2.2.0"
   }
 }
