@@ -1,6 +1,6 @@
 {
   "name": "mgustmann",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "license": "MIT",
   "scripts": {
     "nx": "nx",
@@ -31,16 +31,16 @@
     "aws-sdk": "^2.834.0"
   },
   "devDependencies": {
-    "@nrwl/angular": "12.2.0",
-    "@nrwl/cli": "12.2.0",
-    "@nrwl/devkit": "12.2.0",
-    "@nrwl/eslint-plugin-nx": "12.2.0",
-    "@nrwl/jest": "12.2.0",
-    "@nrwl/linter": "12.2.0",
-    "@nrwl/node": "12.2.0",
-    "@nrwl/nx-plugin": "12.2.0",
-    "@nrwl/tao": "12.2.0",
-    "@nrwl/workspace": "12.2.0",
+    "@nrwl/angular": "12.3.5",
+    "@nrwl/cli": "12.3.5",
+    "@nrwl/devkit": "12.3.5",
+    "@nrwl/eslint-plugin-nx": "12.3.5",
+    "@nrwl/jest": "12.3.5",
+    "@nrwl/linter": "12.3.5",
+    "@nrwl/node": "12.3.5",
+    "@nrwl/nx-plugin": "12.3.5",
+    "@nrwl/tao": "12.3.5",
+    "@nrwl/workspace": "12.3.5",
     "@types/aws-lambda": "^8.10.71",
     "@types/fs-extra": "^9.0.6",
     "@types/jest": "26.0.8",
@@ -55,6 +55,6 @@
     "ts-jest": "26.5.5",
     "ts-node": "~9.1.1",
     "tslib": "^2.0.0",
-    "typescript": "4.1.4"
+    "typescript": "4.2.4"
   }
 }
