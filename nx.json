@@ -18,21 +18,25 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "parallel": 1
       }
-    }
-  },
-  "projects": {
-    "amplify": {
-      "tags": []
-    },
-    "amplify-e2e": {
-      "tags": [],
-      "implicitDependencies": ["amplify"]
     }
   },
   "workspaceLayout": {
     "appsDir": "e2e",
     "libsDir": "packages"
-  }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace"
+  },
+  "defaultProject": "amplify"
 }

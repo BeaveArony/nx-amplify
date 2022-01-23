@@ -10,7 +10,8 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["packages/amplify/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -48,7 +49,8 @@
             ]
           }
         }
-      }
+      },
+      "tags": []
     },
     "amplify-e2e": {
       "projectType": "application",
@@ -64,11 +66,9 @@
             "jestConfig": "e2e/amplify-e2e/jest.config.js"
           }
         }
-      }
+      },
+      "tags": [],
+      "implicitDependencies": ["amplify"]
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  },
-  "defaultProject": "amplify"
+  }
 }

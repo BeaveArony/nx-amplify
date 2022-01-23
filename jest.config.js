@@ -1,3 +1,5 @@
+const { getJestProjects } = require('@nrwl/jest');
+
 module.exports = {
-  projects: ['<rootDir>/packages/amplify', '<rootDir>/e2e/amplify-e2e'],
+  projects: [...getJestProjects(), '<rootDir>/e2e/amplify-e2e'],
 };
