@@ -1,4 +1,5 @@
-module.exports = {
+/* eslint-disable */
+export default {
   displayName: 'amplify',
   preset: '../../jest.preset.js',
   globals: {

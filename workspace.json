@@ -17,12 +17,12 @@
           "executor": "@nrwl/jest:jest",
           "outputs": ["coverage/packages/amplify"],
           "options": {
-            "jestConfig": "packages/amplify/jest.config.js",
+            "jestConfig": "packages/amplify/jest.config.ts",
             "passWithNoTests": true
           }
         },
         "build": {
-          "executor": "@nrwl/node:package",
+          "executor": "@nrwl/js:tsc",
           "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/packages/amplify",
