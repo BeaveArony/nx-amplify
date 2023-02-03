@@ -1,14 +1,11 @@
-import { Handler } from 'aws-lambda';
+import type { AmplifyGraphQlResolverHandler } from 'aws-lambda';
 import * as fromApp from './app';
 
-export const handler: Handler<unknown, unknown> = (
+export const handler: AmplifyGraphQlResolverHandler = (
   event,
   context,
   callback
 ) => {
-  console.log('main handler called', {
-    event: `${JSON.stringify(event, null, 2)}`,
-    context,
-  });
+  console.log('main handler called', JSON.stringify(event, null, 2));
   return fromApp.handler(event, context, callback);
 };

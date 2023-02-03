@@ -1,14 +1,15 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "lib": ["es2020"],
-    "target": "es2019",
-    "importHelpers": false,
     "outDir": "<%= offsetFromRoot %>dist/out-tsc",
+    "module": "ESNext",
+    "lib": ["ES2022"],
+    "target": "ES2022",
+    "sourceMap": false,
+    "importHelpers": false,
     "declaration": false,
     "types": ["node"]
   },
-  "exclude": ["**/*.spec.ts", "**/*.test.ts"],
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "jest.config.ts"],
   "include": ["**/*.ts"]
 }

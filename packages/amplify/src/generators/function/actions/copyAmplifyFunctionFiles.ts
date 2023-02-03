@@ -24,8 +24,10 @@ export function copyAmplifyFunctionFiles(
       content = content.replace(
         /exports\.handler/g,
         `import { Handler } from './types';
+        // import type { AmplifyGraphQlResolverHandler } from 'aws-lambda';
 
-        export const handler: Handler<any, unknown>`
+        // export const handler: AmplifyGraphQlResolverHandler
+        export const handler: AmplifyGraphQlResolverHandler`
       );
       content = content.replace(
         /(?:const|let|var)\s+([a-zA-Z0-9]*)\s*=\s*(require\(.*\).*)/g,
