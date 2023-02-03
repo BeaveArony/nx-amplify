@@ -15,7 +15,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/amplify"],
+          "outputs": ["{workspaceRoot}/coverage/packages/amplify"],
           "options": {
             "jestConfig": "packages/amplify/jest.config.ts",
             "passWithNoTests": true
