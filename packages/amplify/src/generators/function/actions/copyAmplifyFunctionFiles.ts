@@ -1,4 +1,4 @@
-import { Tree } from '@nrwl/devkit';
+import { Tree } from '@nx/devkit';
 import * as path from 'path';
 import { getRecursiveFilesFromDirectory } from '../../utils/getRecursiveFilesFromDirectory';
 import { NormalizedSchema } from './normalized-schema';

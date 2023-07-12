@@ -1,4 +1,4 @@
-import { names } from '@nrwl/devkit';
+import { names } from '@nx/devkit';
 import {
   checkFilesExist,
   ensureNxProject,
@@ -10,7 +10,7 @@ import {
   renameFile,
   listFiles,
   readFile,
-} from '@nrwl/nx-plugin/testing';
+} from '@nx/plugin/testing';
 import { copySync } from 'fs-extra';
 import * as path from 'path';
 

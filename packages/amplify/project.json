@@ -1,0 +1,52 @@
+{
+  "name": "amplify",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/amplify/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["packages/amplify/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/packages/amplify"],
+      "options": {
+        "jestConfig": "packages/amplify/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/amplify",
+        "tsConfig": "packages/amplify/tsconfig.lib.json",
+        "packageJson": "packages/amplify/package.json",
+        "main": "packages/amplify/src/index.ts",
+        "assets": [
+          "packages/amplify/*.md",
+          {
+            "input": "./packages/amplify/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/amplify",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/amplify",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    }
+  },
+  "tags": []
+}

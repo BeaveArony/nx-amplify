@@ -1,4 +1,4 @@
-import { addDependenciesToPackageJson, Tree, updateJson } from '@nrwl/devkit';
+import { addDependenciesToPackageJson, Tree, updateJson } from '@nx/devkit';
 import { NormalizedSchema } from './normalized-schema';
 
 /** Add scripts to package.json to build and debug the Lambda function */

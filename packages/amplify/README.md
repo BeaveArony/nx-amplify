@@ -2,7 +2,7 @@
 
 This project is a [Nx](https://nx.dev) plugin to generate Typescript NodeJS apps after creating an [AWS Amplify](https://aws.amazon.com/de/amplify/) function in your Nx repo.
 
-The `amplify:function` Generator will create a [@nrwl/node:application](https://nx.dev/latest/angular/plugins/node/generators/application) based on the existing AWS Amplify Function. It will also
+The `amplify:function` Generator will create a [@nx/node:application](https://nx.dev/latest/angular/plugins/node/generators/application) based on the existing AWS Amplify Function. It will also
 
 - configure the tsconfig.json to support the AWS Lambda NodeJS 12.x environment, so you can use ES2019 features
 - add package.json scripts to build and run/test the function locally
@@ -73,7 +73,7 @@ You can use these for your convenience and wrap the existing `Handler` type with
 
 As with all types, these will be stripped out during the build process.
 
-> Currently the typing-files are generated for every @nrwl/node application. They could be extracted to a shared lib, but this would impose some more knowledge of your repo. Consider looking at them as add-ons and move, delete or use them however you like.
+> Currently the typing-files are generated for every @nx/node application. They could be extracted to a shared lib, but this would impose some more knowledge of your repo. Consider looking at them as add-ons and move, delete or use them however you like.
 
 ### AppSync Types
 
@@ -148,11 +148,11 @@ export const handler: Handler<CognitoTriggerEvent, CognitoTriggerEvent> = (
 
 ## Options
 
-You can add most of the options of [@nrwl/node:application](https://nx.dev/latest/angular/plugins/node/generators/application) to configure it.
+You can add most of the options of [@nx/node:application](https://nx.dev/latest/angular/plugins/node/generators/application) to configure it.
 
 ### --directory
 
-By default this Generator will add a @nrwl/node app `gqlResolver` under a `functions` folder, ie. `apps/functions/gqlResolver`. If you want to generate your NodeJS-Functions in another directory, you can specify it with `--directory`.
+By default this Generator will add a @nx/node app `gqlResolver` under a `functions` folder, ie. `apps/functions/gqlResolver`. If you want to generate your NodeJS-Functions in another directory, you can specify it with `--directory`.
 
 ### --tags
 

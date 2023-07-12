@@ -1,5 +1,5 @@
-import { formatFiles, Tree } from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+import { formatFiles, Tree } from '@nx/devkit';
+import { applicationGenerator } from '@nx/node';
 import { addFiles } from './actions/addFiles';
 import { copyAmplifyFunctionFiles } from './actions/copyAmplifyFunctionFiles';
 import { normalizeOptions } from './actions/normalizeOptions';
@@ -13,7 +13,7 @@ import { updateAmplifyStateJson } from './actions/updateAmplifyStateJson';
 export default async function (host: Tree, options: FunctionGeneratorSchema) {
   const normalizedOptions = normalizeOptions(host, options);
 
-  // Generate @nrwl/node app
+  // Generate @nx/node app
   await applicationGenerator(host, {
     name: normalizedOptions.name,
     directory: normalizedOptions.directory,
