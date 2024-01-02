@@ -16,9 +16,9 @@ export function updateWorkspaceJson(host: Tree, options: NormalizedSchema) {
     `${options.projectRoot}/src/package.json`,
   ];
   projectConfig.targets.build.options.externalDependencies = [
-    ...projectConfig.targets.build.options.externalDependencies,
+    ...(projectConfig.targets.build.options.externalDependencies ?? []),
     '@aws-sdk',
-    'aws-lambda',
+    '@aws-lambda',
   ];
 
   updateProjectConfiguration(host, options.projectName, projectConfig);

@@ -6,7 +6,7 @@ export function normalizeOptions(
   host: Tree,
   options: FunctionGeneratorSchema
 ): NormalizedSchema {
-  const { appsDir, npmScope } = getWorkspaceLayout(host);
+  const { appsDir } = getWorkspaceLayout(host);
   const name = names(options.name).fileName;
   const projectDirectory = options.directory
     ? `${names(options.directory).fileName}/${name}`
@@ -17,7 +17,7 @@ export function normalizeOptions(
     ? options.tags.split(',').map((s) => s.trim())
     : [];
 
-  const importPath = `@${npmScope}/${projectName}`;
+  // const importPath = `@${npmScope}/${projectName}`;
   const amplifyFunctionPath = `amplify/backend/function/${options.name}`;
 
   const normalizedOpts = {
@@ -26,7 +26,7 @@ export function normalizeOptions(
     projectRoot,
     projectDirectory,
     parsedTags,
-    importPath,
+    // importPath,
     amplifyFunctionPath,
   };
   console.warn('Normalized Options', normalizedOpts);

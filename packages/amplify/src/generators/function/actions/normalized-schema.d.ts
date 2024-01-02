@@ -5,6 +5,6 @@ export interface NormalizedSchema extends FunctionGeneratorSchema {
   projectRoot: string;
   projectDirectory: string;
   parsedTags: string[];
-  importPath: string;
+  importPath?: string;
   amplifyFunctionPath: string;
 }

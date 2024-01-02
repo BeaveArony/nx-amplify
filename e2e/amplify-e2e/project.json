@@ -10,7 +10,8 @@
         "npmPackageName": "@mgustmann/amplify",
         "pluginOutputPath": "dist/packages/amplify",
         "jestConfig": "e2e/amplify-e2e/jest.config.js",
-        "runInBand": true
+        "runInBand": true,
+        "passWithNoTests": false
       },
       "dependsOn": ["amplify:build"]
     }
